@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mural de Avisos Acadêmicos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p>Laboratório de Programação Full Stack</p>
+    <h1>Mural de Avisos Acadêmicos</h1>
+    <span id="estado-api">Verificando a API...</span>
+  </header>
+
+  <main>
+    <section>
+      <h2>Publicar aviso</h2>
+
+      <form id="form-aviso">
+        <label>
+          Título
+          <input id="titulo" required minlength="4" maxlength="60">
+        </label>
+
+        <label>
+          Autor
+          <input id="autor" required minlength="3" maxlength="50">
+        </label>
+
+        <label>
+          Prioridade
+          <select id="prioridade">
+            <option value="normal">Normal</option>
+            <option value="importante">Importante</option>
+          </select>
+        </label>
+
+        <label class="campo-largo">
+          Mensagem
+          <textarea id="mensagem-aviso" required minlength="10" maxlength="300"></textarea>
+        </label>
+
+        <button type="submit">Publicar</button>
+      </form>
+
+      <p id="mensagem-sistema" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <div class="titulo-lista">
+        <h2>Avisos publicados</h2>
+        <button id="botao-atualizar" type="button">Atualizar lista</button>
+      </div>
+      <div id="lista-avisos"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
